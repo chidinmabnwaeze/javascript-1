@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Time practice</title>
+  </head>
+  <body>
+    <script>
+      /*question is on 3:49:24 in the video
+            example 1*/
+      let hour = "15:00";
+      let time = "";
+
+      if (hour >= "6:00" && hour <= "12:00") {
+        time = "Good morning";
+      } else if (hour >= "13:00" && hour <= "17:00") {
+        time = "Good afternoon";
+      } else {
+        time = "Good night";
+      }
+
+      console.log(time);
+
+      let result = "";
+      let name= 'Chidinma Blessing ';
+
+      if (time === "Good morning") {
+        result = "This is still within the early hours of the day";
+      } else if (time === "Good afternoon") {
+        result = "This is mid day!";
+      } else if (time === "Good night") {
+        result = "The day is almost over";
+      }
+      alert(`Hi, ${result} ${time} ${name}`);
+
+      
+
+      //example 2//
+      let age = "30";
+      let Discount = "";
+      if (age <= 6) {
+        Discount = "Discount";
+      } else if (age > 6) {
+        Discount = "No discount";
+      }
+
+      if (age >= 65) {
+        Discount = "Discount";
+      }
+
+      console.log(Discount);
+
+      let age =''
+
+    </script>
+  </body>
+</html>
