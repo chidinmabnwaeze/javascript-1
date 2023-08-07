@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+        /*
+ function function1() {
+console.log('hello');
+console.log(4+4);
+ }
+
+ function1(); 
+*/
+/*where tax percent is a parameter
+you can also assign a default value by adding the value to the parameter in the function*/
+function calculateTax(cost, taxPercent = 0.3){
+    console.log(cost*taxPercent);
+}
+calculateTax(3000,0.2);
+calculateTax(5000);
+    </script>
+</body>
+</html>
