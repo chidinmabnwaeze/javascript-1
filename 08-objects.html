@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+   <script>
+    const product = {
+        name: 'shoes',
+        price: 1000
+    };
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+
+    product.name = 'cotton socks';
+    console.log(product); 
+
+    const product2 ={
+        name: 'shirts',
+        'delivery-time' : '1 day',
+        rating: {
+            stars : 4.5,
+            count: 87
+        },
+        fun: function functionA () {
+            console.log('functionA has branches');
+        }
+    };
+    console.log(product2);
+    console.log(product2.rating.count);
+    /*you write without the console.log when you want to run a function inside an object*/
+    product2.fun();
+    // to convert javascript to json //
+    JSON.stringify();
+    //insert the object you want to convert into the bracket//
+    console.log(JSON.stringify(product2));
+    //To convert back to javaScript//
+    const /*variable name*/ jsonstring = JSON.stringify(product2);
+    console.log(JSON.parse(jsonstring ));
+   </script> 
+</body>
+</html>
