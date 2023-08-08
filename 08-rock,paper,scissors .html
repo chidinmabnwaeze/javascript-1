@@ -36,7 +36,7 @@
     scores.wins = 0;
     scores.losses = 0;
     scores.ties = 0;
-    ">
+     localStorage.removeItem('scores')">
       Reset Score
     </button>
 
@@ -45,12 +45,25 @@
     </p>
 
     <script>
-const scores ={
-wins: 0,
-losses: 0,
-ties: 0
-};
+let scores = JSON.parse(localStorage.getItem('scores')); || 
+    scores.wins = 0;
+    scores.losses = 0;
+    scores.ties = 0;
 
+/* to get a value out of local storage
+give it one string which is the name of the string earlier
+
+console.log(localStorage.getItem('scores')); */
+/* to turn it back to javaScript so that it takes scores from the local storage amd displays on the alert pop-up thats the code displayed about with JSON.parse*/
+
+/* another way to localStorage removeItem
+where not score(!score) will be flipped to true
+if (!scores) {
+  scores ={ wins = 0,
+  losses = 0,
+  ties = 0 
+}
+} */
 function playGame(playerMove){
   let computerMove= pickComputerMove();
   result = '';
@@ -79,6 +92,10 @@ if (result === 'You win.') {
   scores.losses += 1;
 } else if (result === 'Tie.') {
   scores.ties += 1;}
+  /* to save in local storage
+  needs two strings - the name and value to be saved*/
+/* to save score into the localStorage, since it only uses string we have to add json to the second message  */
+  localStorage.setItem('scores', JSON.stringify(scores));
 
   alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
   Wins: ${scores.wins} Losses: ${scores.losses} Ties: ${scores.ties}`);
