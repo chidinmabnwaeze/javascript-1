@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,6 +40,18 @@
     //To convert back to javaScript//
     const /*variable name*/ jsonstring = JSON.stringify(product2);
     console.log(JSON.parse(jsonstring ));
+
+    //destructuring
+    const object4 ={
+        message: "Good Job",
+        price: "7.99"
+    }
+    const {message, price} = object4;
+
+    //shorthand property (if the name and object are the same you can just write)
+    const object5 ={
+        message
+    }
    </script> 
 </body>
 </html>

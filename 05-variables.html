@@ -44,15 +44,10 @@
   <p>calculator</p>
   <button onclick="updateCalculation('1')">1</button>
   <button onclick="updateCalculation('2')">2</button>
-  <button onclick="(calcuator += 3)
-    console.log(`${calcuator}`)">3</button>
-  <button onclick="calcuator += ' + '
-    console.log(`${calcuator}`)">+</button>
-  <button onclick="calcuator += ' - '
-    console.log(`${calcuator}`)">-</button>
-  <button onclick="eval(calcuator )
-    calcuator= eval(calcuator)
-    console.log(`${calcuator}`)">=</button>
+  <button onclick="updateCalculation('3')">3</button>
+  <button onclick="updateCalculation(' + ')">+</button>
+  <button onclick="updateCalculation(' - ')">-</button>
+  <button onclick="updateCalculation(' = ')">=</button>
 
   <script>
     let variable1 = 3;
@@ -86,6 +81,7 @@
     console.log(tax)
 
     let calcuator = ""
+    console.log(localStorage.getItem('updateCalc'))
     function updateCalculation(clicked){
 
       if (clicked === "1"){
@@ -105,11 +101,16 @@
       else if( clicked === ' - '){
         calcuator += ' - '
     console.log(`${calcuator}`)
-      } else if (clicked === '='){
+      } else if (clicked === ' = ' ){
         eval(calcuator )
     calcuator= eval(calcuator)
     console.log(`${calcuator}`)
       }
+      
+      //saving in localstorage - takes two parameters name and the value
+      localStorage.setItem("updateCalc", JSON.stringify(calcuator)) || 
+     (!calcuator)
+     
     }
 
   </script>

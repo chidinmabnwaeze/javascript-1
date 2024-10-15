@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <button>hello</button>
+    <button class="button2">hello</button>
+
+    <p>Youtube change button</p>
+    <button class="subscribe" onclick="changeButton();">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input type="text" placeholder="Cost of order" class="js-input" onkeydown="enterKey()">
+    <button onclick="calculateCost()">Calculate</button>
+    <p class="js-totalCost"></p>
+
+    <script>
+        function calculateCost() {
+            const inputElement = document.querySelector('.js-input')
+            //add Number to make it do maths by converting to a number from string
+            let cost = Number(inputElement.value)
+
+            if (cost < 40) {
+                cost = cost + 10;
+            }
+
+            document.querySelector('.js-totalCost').innerHTML = `N${cost}`
+            console.log(cost)
+        }
+        function enterKey() {
+            if (event.key === 'Enter') {
+                calculateCost();
+            }
+        }
+        //lets us get any element from the page
+        // document.querySelector('button').
+        //     innerHTML = 'changed'
+        // document.body.innerHTML = "hello"
+        // document.title = "DOM lesson"
+
+        // const buttonElement = document.querySelector("button2")
+
+        function changeButton() {
+            const subscribe = document.querySelector('.subscribe')
+            if (subscribe.innerText === 'Subscribe') {
+                subscribe.innerHTML = 'Subscribed'
+            } else {
+                subscribe.innerHTML = 'Subscribe'
+            }
+        }
+    </script>
+</body>
+
+</html>
