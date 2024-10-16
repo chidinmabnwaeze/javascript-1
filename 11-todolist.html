@@ -10,10 +10,18 @@
 <body>
     <p>Todo list</p>
     <input type="text" placeholder="Todo Name" class="js-nameInput">
+    <input type="date" class="js-date">
     <button onclick="addtodo()">Add</button>
     <div class="js-todolist"></div>
+
     <script>
-        const todolist = [];
+        const todolist = [
+            {
+                name: 'make dinner',
+                date: '16-10-2024'
+            }
+        ];
+
 
         renderTodolist();
         function renderTodolist() {
@@ -21,8 +29,16 @@
             let todolistHTML = '';
 
             for (let i = 0; i < todolist.length; i++) {
-                const todo = todolist[i]
-                const htmlText = `<p>${todo}</p>`
+                const todoObject = todolist[i];
+                // const name =todoObject.name;
+                // const date = todoObject.date;
+                //destructuring to create a variable with the same object name 
+                const { name, date } = todoObject;
+                const htmlText = `<p>${name} ${date}</p>
+                <button onclick = '
+                todolist.splice(${i},1)
+                renderTodolist()'
+                >Delete</button>`
                 todolistHTML += htmlText
             }
             document.querySelector('.js-todolist').innerHTML = todolistHTML;
@@ -33,7 +49,13 @@
             const inputElement = document.querySelector('.js-nameInput');
             const name = inputElement.value;
 
-            todolist.push(name); 
+            const dateElement = document.querySelector('.js-date')
+            const date = dateElement.value
+
+            todolist.push({
+                name,
+                date
+            });
             console.log(todolist)
 
             inputElement.value = '';
